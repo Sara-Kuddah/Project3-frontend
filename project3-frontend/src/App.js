@@ -3,6 +3,7 @@ import './App.css';
 import Coffees from './coffee/components/Coffees'
 import Machines from './machine/components/machines'
 import Tools from './tool/components/tools'
+import Carts from './cart/components/Carts'
 import apiURL from './apiConfig';
 
 export default class App extends React.Component{
@@ -13,6 +14,7 @@ export default class App extends React.Component{
        coffees : [],
        machines:[],
        tools:[],
+       carts:[],
   
     }
     console.log(' MY API URL ', apiURL)
@@ -34,6 +36,12 @@ export default class App extends React.Component{
       tools : tools
     })
   }
+
+  setCarts = (carts) => {
+    this.setState({
+      carts : carts
+    })
+  }
   render(){
 
   return(
@@ -52,6 +60,9 @@ export default class App extends React.Component{
 
   <Tools  tools={this.state.tools} 
   setTools={this.setTools}/>
+
+<Carts  carts={this.state.carts} 
+  setCarts={this.setCarts}/>
   
 
 </div>
