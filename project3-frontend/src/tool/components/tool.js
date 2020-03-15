@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export default class Coffee extends React.Component{
+export default class Tool extends React.Component{
   
 
   render(){
@@ -20,7 +20,3 @@ export default class Coffee extends React.Component{
 
 
 }
-
-
-
-
