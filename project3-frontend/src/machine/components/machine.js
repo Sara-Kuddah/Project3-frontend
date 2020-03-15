@@ -13,6 +13,7 @@ export default class Machine extends React.Component{
        <p> {this.props.type} </p>
        <p> {this.props.price} </p>
        <p> {this.props.img} </p>
+       <a href ="#">ADD TO CART</a>
 </div>
   )
 }
