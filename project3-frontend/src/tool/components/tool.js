@@ -24,8 +24,6 @@ export default class Tool extends React.Component{
         newCartList.push(cartItem);
         console.log(newCartList)
         this.props.setCarts(newCartList)
-        window.location.reload()
-
     })
     .catch((error) =>{
         console.log('API error' , error)

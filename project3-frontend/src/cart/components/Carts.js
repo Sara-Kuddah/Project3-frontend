@@ -30,6 +30,8 @@ export default class Carts extends React.Component{
             console.log('API error' , error)
         })
      }
+     
+
 
      deleteOne = (id) => {
         console.log('The item ID to Delete', id);
@@ -37,6 +39,7 @@ export default class Carts extends React.Component{
           .then((response) => {
             console.log(`The item with the ID ${id} has been deleted.`);
             const newCartList = this.props.carts.filter((item) => {
+               
               return item._id !== id;
             });
             this.props.setCarts(newCartList);
