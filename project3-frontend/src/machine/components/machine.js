@@ -1,8 +1,35 @@
 import React from 'react';
+import {addToCart} from '../../cart/cartAPI';
 
 
 export default class Machine extends React.Component{
   
+  addToCartMachine = (event)=>{
+    event.preventDefault();
+
+    let cartItem ={
+      itemId : this.props.id ,
+      totalprice:55 ,
+       name: this.props.name,
+      price: this.props.price, 
+      amount : 9 ,
+     img: this.props.img
+     } 
+    
+
+    addToCart(cartItem) 
+    .then ((response)=>{
+        console.log("Item has been Added");
+        const  newCartList = this.props.carts;
+        newCartList.push(cartItem);
+        console.log(newCartList)
+        this.props.setCarts(newCartList)
+
+    })
+    .catch((error) =>{
+        console.log('API error' , error)
+    })
+  }
 
   render(){
 
@@ -13,7 +40,7 @@ export default class Machine extends React.Component{
        <p> {this.props.type} </p>
        <p> {this.props.price} </p>
        <p> {this.props.img} </p>
-       <a href ="#">ADD TO CART</a>
+       <a href ="#" onClick={this.addToCartMachine}>ADD TO CART</a>
 </div>
   )
 }
