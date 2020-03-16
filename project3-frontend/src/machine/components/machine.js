@@ -24,6 +24,7 @@ export default class Machine extends React.Component{
         newCartList.push(cartItem);
         console.log(newCartList)
         this.props.setCarts(newCartList)
+       
 
     })
     .catch((error) =>{

@@ -32,6 +32,8 @@ export default class Carts extends React.Component{
      }
 
      deleteOne = (id) => {
+      this.componentDidMount()
+      
         console.log('The item ID to Delete', id);
         deleteItemByID(id)
           .then((response) => {
@@ -45,6 +47,7 @@ export default class Carts extends React.Component{
           .catch((error) => {
             console.log('API ERROR:', error);
           });
+
       }
 
 

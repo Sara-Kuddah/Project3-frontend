@@ -24,6 +24,7 @@ export default class Coffee extends React.Component{
         newCartList.push(cartItem);
         console.log(newCartList)
         this.props.setCarts(newCartList)
+        
 
     })
     .catch((error) =>{
