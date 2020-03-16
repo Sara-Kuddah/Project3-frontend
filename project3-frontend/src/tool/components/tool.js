@@ -19,12 +19,13 @@ export default class Tool extends React.Component{
 
     addToCart(cartItem) 
     .then ((response)=>{
-        console.log("Item has been Added");
+        // console.log("Item has been Added");
         const  newCartList = this.props.carts;
         newCartList.push(cartItem);
         console.log(newCartList)
         this.props.setCarts(newCartList)
-        window.location.reload()
+       
+       
 
     })
     .catch((error) =>{
