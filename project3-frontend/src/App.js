@@ -72,6 +72,8 @@ export default class App extends React.Component{
         </li>
       </ul>
     </nav>
+
+    
   <Coffees  coffees={this.state.coffees} 
   setCoffees={this.setCoffees}
   setCarts={this.setCarts}

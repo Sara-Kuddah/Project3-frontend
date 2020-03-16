@@ -33,6 +33,8 @@ render(){
         type={item.type}
         price={item.price}
         img={item.img}
+        setCarts={this.props.setCarts}
+        carts={this.props.carts}
         id={item._id}
         key={index}
         />
