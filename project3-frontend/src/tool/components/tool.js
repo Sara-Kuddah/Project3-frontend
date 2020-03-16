@@ -9,10 +9,10 @@ export default class Tool extends React.Component{
 
     let cartItem ={
       itemId : this.props.id ,
-      totalprice:55 ,
+      totalprice: this.props.price ,
        name: this.props.name,
       price: this.props.price, 
-      amount : 9 ,
+      amount : 1 ,
      img: this.props.img
      } 
     
