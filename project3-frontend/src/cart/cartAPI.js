@@ -10,3 +10,21 @@ export const getAllcart = () => {
     return   axios.get(`${apiUrl}/cart`)
   
 };
+
+
+export const addToCart= (cartItem) =>{
+    console.log("this is the add to cart function work ");
+    return axios.post(`${apiUrl}/cart` , 
+        {
+            "cart":{
+             "itemId" : cartItem.itemId ,
+             "totalprice" :cartItem.totalprice ,
+              "name": cartItem.name,
+             "price": cartItem.price, 
+             "amount" : cartItem.amount ,
+            "img": cartItem.img
+            } 
+       }
+    )
+    
+}

@@ -6,8 +6,8 @@ import Tools from './tool/components/tools'
 import Carts from './cart/components/Carts'
 import apiURL from './apiConfig';
 
+
 export default class App extends React.Component{
- 
   constructor(props){
     super(props);
     this.state = {
@@ -15,8 +15,8 @@ export default class App extends React.Component{
        machines:[],
        tools:[],
        carts:[],
-  
     }
+
     console.log(' MY API URL ', apiURL)
   }
 
@@ -25,7 +25,6 @@ export default class App extends React.Component{
       coffees : coffees
     })
   }
-
   setMachines = (machines) => {
     this.setState({
       machines:machines
@@ -36,34 +35,21 @@ export default class App extends React.Component{
       tools : tools
     })
   }
-
   setCarts = (carts) => {
     this.setState({
       carts : carts
     })
   }
   render(){
-
   return(
 <div className="App">
-  <header className="App-header">
-  <p> 
-    welcome to coffee store  ! 
-  </p>
-  
-  </header>
   <div className="jumbotron" style={{marginBottom: 0+'em'}}>
     <h1>Coffee Store</h1>
     <p>When you can find every thing you need</p>
-
   </div>
-
-
     <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-
       <a class="navbar-brand"><img src=""/></a>
       <span class="navbar-text">Coffee Store</span>
-
       <ul className="navbar-nav">
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown-product" href="/">
@@ -77,36 +63,39 @@ export default class App extends React.Component{
               <a className="dropdown-item">Tools</a>
             </div>
         </li>
-
         <li className="nav-item">
           <a className="nav-link" href="/">Contact Us</a>
         </li>
-
         <li className="nav-item">
           <a className="nav-link" href="/">Cart
           </a>
         </li>
-  
       </ul>
     </nav>
   <Coffees  coffees={this.state.coffees} 
-  setCoffees={this.setCoffees}/>
+  setCoffees={this.setCoffees}
+  setCarts={this.setCarts}
+  carts={this.state.carts}
+   />
 
   <Machines  machines={this.state.machines} 
-  setMachines={this.setMachines}/>
+  setMachines={this.setMachines}
+   setCarts={this.setCarts}
+   carts={this.state.carts}
+   />
 
   <Tools  tools={this.state.tools} 
-  setTools={this.setTools}/>
+  setTools={this.setTools} 
+  setCarts={this.setCarts}
+  carts={this.state.carts}
+  />
 
 <Carts  carts={this.state.carts} 
   setCarts={this.setCarts}/>
   </div>
 
-
   )
 }
-
-
 }
 
 
