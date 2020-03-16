@@ -6,7 +6,8 @@ export default class Cart extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      amount : this.props.amount
+      amount : this.props.amount,
+      totalprice : this.props.price
     }
   }
   
@@ -19,16 +20,19 @@ export default class Cart extends React.Component{
   decreseAmount = () => {
     if(this.state.amount > 0){
       let newamount = this.state.amount ;
+      let newTotalprice=this.state.totalprice;
+      newTotalprice = newTotalprice-this.props.price;
       newamount = newamount-1;
     this.setState ({
-      amount : newamount
+      amount : newamount ,
+      totalprice: newTotalprice
     })
     console.log("dec",this.state.amount)
     let cartItem ={
       itemId : this.props.id ,
-      totalprice: 500 ,
+      totalprice: this.state.totalprice ,
        name: this.props.name,
-      price: this.props.price, 
+      price: this.props.price , 
       amount : this.state.amount ,
       img: this.props.img
      } 
@@ -49,14 +53,18 @@ export default class Cart extends React.Component{
 
   incresAmount = () => {
     let newamount = this.state.amount ;
+    let newTotalprice=this.state.totalprice;
     newamount = newamount+1;
+    newTotalprice = newTotalprice+this.props.price;
+
     this.setState ({
-      amount : newamount
+      amount : newamount ,
+      totalprice: newTotalprice
     })
     console.log("Inc",this.state.amount)
     let cartItem ={
       itemId : this.props.id ,
-      totalprice: 500 ,
+      totalprice: this.state.totalprice ,
        name: this.props.name,
       price: this.props.price, 
       amount : this.state.amount ,
@@ -82,6 +90,7 @@ export default class Cart extends React.Component{
     <p> {this.props.img} </p>
      <h2>Name: {this.props.name}</h2>
      <p>price: {this.props.price} </p>
+     <p>total price: {this.props.totalprice} </p>
   <button onClick={this.decreseAmount}> - </button>
   <p>amount:{this.state.amount} </p>
      <button onClick={this.incresAmount}> + </button>
