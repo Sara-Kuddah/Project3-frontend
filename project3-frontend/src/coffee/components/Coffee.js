@@ -18,11 +18,11 @@ export default class Coffee extends React.Component{
     
 
     addToCart(cartItem) 
-    .then ((response)=>{
+    .then ((res)=>{
         console.log("Item has been Added");
         const  newCartList = this.props.carts;
-        newCartList.push(cartItem);
-        console.log(newCartList)
+        newCartList.push(res.data.cart);
+        console.log(res.data.cart)
         this.props.setCarts(newCartList)
         
 
