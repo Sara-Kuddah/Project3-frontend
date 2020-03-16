@@ -10,6 +10,15 @@ export const getAllcart = () => {
     return   axios.get(`${apiUrl}/cart`)
   
 };
+export const deleteAll = () => {
+    console.log(" inside axios")
+return   axios.delete(`${apiUrl}/cart`)
+
+};
+
+export const deleteItemByID = id => {
+    return axios.delete(`${apiUrl}/cart/${id}`);
+  };
 
 
 export const addToCart= (cartItem) =>{
