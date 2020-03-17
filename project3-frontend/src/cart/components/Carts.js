@@ -30,15 +30,18 @@ export default class Carts extends React.Component{
             console.log('API error' , error)
         })
      }
+     
+
 
      deleteOne = (id) => {
-      
+      //this.componentDidMount()
       
         console.log('The item ID to Delete', id);
         deleteItemByID(id)
           .then((response) => {
             console.log(`The item with the ID ${id} has been deleted.`);
             const newCartList = this.props.carts.filter((item) => {
+               
               return item._id !== id;
             });
             this.props.setCarts(newCartList);
@@ -51,14 +54,16 @@ export default class Carts extends React.Component{
       }
 
   sumAllTotal = () => {
+    this.componentDidMount()
     let totalAllProduct = 0 ;
     if (this.props.carts.length > 0){
       let newArray = this.props.carts.filter((element) => {
                 console.log(element.totalprice)
                return totalAllProduct += element.totalprice
       })
-        return newArray
+      return totalAllProduct
    }
+   
 
 
   }
@@ -76,6 +81,7 @@ render(){
         amount={item.amount}
         totalprice={item.totalprice}
         deleteOne={this.deleteOne}
+        setCarts={this.props.setCarts}
         itemId={item.itemId}
         id={item._id}
         key={index}
@@ -89,10 +95,9 @@ render(){
      }
 
       
-     let total=this.sumAllTotal;
+     
 
-
-    
+  
      
 
     
@@ -101,7 +106,7 @@ render(){
 <a href="#" onClick={this.deleteAllCart}>Delete All</a>
 {allCarts}
 <h4> the total </h4>
-{total}
+{this.sumAllTotal()}
 </div>
   )
 }
