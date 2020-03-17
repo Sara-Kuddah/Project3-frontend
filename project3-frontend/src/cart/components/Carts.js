@@ -53,6 +53,21 @@ export default class Carts extends React.Component{
 
       }
 
+  sumAllTotal = () => {
+    this.componentDidMount()
+    let totalAllProduct = 0 ;
+    if (this.props.carts.length > 0){
+      let newArray = this.props.carts.filter((element) => {
+                console.log(element.totalprice)
+               return totalAllProduct += element.totalprice
+      })
+      return totalAllProduct
+   }
+   
+
+
+  }
+
 
 render(){
        
@@ -70,19 +85,28 @@ render(){
         itemId={item.itemId}
         id={item._id}
         key={index}
+        setCarts={this.props.setCarts}
+        carts = {this.props.carts}
+        sumAllTotal={this.sumAllTotal}
+       
         />
     })
 
      }
 
+      
+     
+
   
      
+
     
   return( <div>
 <h3> All Carts </h3>
 <a href="#" onClick={this.deleteAllCart}>Delete All</a>
 {allCarts}
-
+<h4> the total </h4>
+{this.sumAllTotal()}
 </div>
   )
 }
