@@ -18,7 +18,8 @@ export default class Cart extends React.Component{
 
   }
 
-  decreseAmount = () => {
+  decreseAmount = (event) => {
+    event.preventDefault();
     if(this.state.amount > 0){
       let newamount = this.state.amount ;
       let newTotalprice=this.state.totalprice;
@@ -52,7 +53,8 @@ export default class Cart extends React.Component{
   }
   }
 
-  incresAmount = () => {
+  incresAmount = (event) => {
+    event.preventDefault();
     let newamount = this.state.amount ;
     let newTotalprice=this.state.totalprice;
     newamount = newamount+1;
@@ -72,9 +74,8 @@ export default class Cart extends React.Component{
       img: this.props.img
      } 
      updateAmount(cartItem , this.props.id )
-    .then((response) => {
-     
-      console.log("update item ")
+    .then((res) => {
+      console.log(res)
   
     })
     .catch((error) => {
@@ -92,9 +93,10 @@ export default class Cart extends React.Component{
      <h2>Name: {this.props.name}</h2>
      <p>price: {this.props.price} </p>
      <p>total price: {this.state.totalprice} </p>
-  <button onClick={this.decreseAmount}> - </button>
+  <a href="#" onClick={this.decreseAmount}> - </a>
   <p>amount:{this.state.amount} </p>
-     <button onClick={this.incresAmount}> + </button>
+     <a href="#" onClick={this.incresAmount}> + </a>
+     
      <a href="#" onClick={this.deleteItem}>Delete</a>
        
 </div>

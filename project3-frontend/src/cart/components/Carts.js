@@ -66,7 +66,7 @@ render(){
         amount={item.amount}
         totalprice={item.totalprice}
         deleteOne={this.deleteOne}
-        componentDidMount={this.componentDidMount}
+        setCarts={this.props.setCarts}
         itemId={item.itemId}
         id={item._id}
         key={index}
