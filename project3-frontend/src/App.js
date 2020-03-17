@@ -82,7 +82,7 @@ export default class App extends React.Component{
     <Router>
         <Link to="/">Go to Home Page</Link>{' '}
         <Link to="/Carts">Carts</Link>{' '}
-        <Link to="/contact">Contact Us!</Link>
+        {/* <Link to="/contact">Contact Us!</Link> */}
       <div>
         <Route exact path="/" component={Home} />
         <Route path="/api/cart" component={Carts} />
@@ -108,8 +108,8 @@ export default class App extends React.Component{
   /> */}
 
 {/* <Carts  carts={this.state.carts} 
-  setCarts={this.setCarts}/>
-  </div> */}
+  setCarts={this.setCarts}/> */}
+  </div>
 
   )
 }
