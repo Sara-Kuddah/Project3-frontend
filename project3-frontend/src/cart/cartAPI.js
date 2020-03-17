@@ -6,7 +6,7 @@ import axios from 'axios';
 
 // get all Articles 
 export const getAllcart = () => {
-           console.log(" inside axios")
+    
     return   axios.get(`${apiUrl}/cart`)
   
 };
