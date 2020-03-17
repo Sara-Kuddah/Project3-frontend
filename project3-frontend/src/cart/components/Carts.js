@@ -53,8 +53,8 @@ export default class Carts extends React.Component{
       }
 
   sumAllTotal = () => {
-    
-    this.componentDidMount()
+
+        this.componentDidMount()
     let totalAllProduct = 0 ;
     if (this.props.carts.length > 0){
       let newArray = this.props.carts.filter((element) => {
@@ -69,7 +69,7 @@ export default class Carts extends React.Component{
 
 
 render(){
-  
+       
 
     let allCarts = <h4> No Carts item </h4>
 
@@ -88,16 +88,16 @@ render(){
         setCarts={this.props.setCarts}
         carts = {this.props.carts}
         sumAllTotal={this.sumAllTotal}
-       
+        
         />
     })
 
      }
-  
-  
+
+      
      
 
-    
+  
   return( <div>
 <h3> All Carts </h3>
 <a href="#" onClick={this.deleteAllCart}>Delete All</a>
