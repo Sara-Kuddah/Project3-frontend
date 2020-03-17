@@ -7,7 +7,6 @@ import {getAllcart, deleteAll, deleteItemByID} from '../cartAPI';
 export default class Carts extends React.Component{
    
     componentDidMount(){
-     
         getAllcart() 
         .then ((response)=>{
             this.props.setCarts(response.data.cart)
@@ -54,11 +53,11 @@ export default class Carts extends React.Component{
       }
 
   sumAllTotal = () => {
+    
     this.componentDidMount()
     let totalAllProduct = 0 ;
     if (this.props.carts.length > 0){
       let newArray = this.props.carts.filter((element) => {
-                console.log(element.totalprice)
                return totalAllProduct += element.totalprice
       })
       return totalAllProduct
@@ -70,7 +69,8 @@ export default class Carts extends React.Component{
 
 
 render(){
-       
+  
+
     let allCarts = <h4> No Carts item </h4>
 
      if(this.props.carts.length > 0){
@@ -93,10 +93,7 @@ render(){
     })
 
      }
-
-      
-     
-
+  
   
      
 
