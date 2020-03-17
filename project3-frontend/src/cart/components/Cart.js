@@ -27,25 +27,25 @@ export default class Cart extends React.Component{
       amount : newamount ,
       totalprice: newTotalprice
     })
-    console.log("dec",this.state.amount)
-    let cartItem ={
-      itemId : this.props.id ,
-      totalprice: this.state.totalprice ,
-       name: this.props.name,
-      price: this.props.price , 
-      amount : this.state.amount ,
-      img: this.props.img
-     } 
+    // console.log("dec",this.state.amount)
+    // let cartItem ={
+    //   itemId : this.props.id ,
+    //   totalprice: this.state.totalprice ,
+    //    name: this.props.name,
+    //   price: this.props.price , 
+    //   amount : this.state.amount ,
+    //   img: this.props.img
+    //  } 
     
-    updateAmount(cartItem , this.props.id )
-    .then((response) => {
+    // updateAmount(cartItem , this.props.id )
+    // .then((response) => {
      
-      console.log("update item ")
+     
   
-    })
-    .catch((error) => {
-      console.log('API ERROR:', error);
-    });
+    // })
+    // .catch((error) => {
+    //   console.log('API ERROR:', error);
+    // });
 
 
   }
@@ -62,27 +62,56 @@ export default class Cart extends React.Component{
       totalprice: newTotalprice
     })
     console.log("Inc",this.state.amount)
-    let cartItem ={
-      itemId : this.props.id ,
-      totalprice: this.state.totalprice ,
-       name: this.props.name,
-      price: this.props.price, 
-      amount : this.state.amount ,
-      img: this.props.img
-     } 
-     updateAmount(cartItem , this.props.id )
-    .then((response) => {
-     
-      console.log("update item ")
+    // let cartItem ={
+    //   itemId : this.props.id ,
+    //   totalprice: this.state.totalprice ,
+    //    name: this.props.name,
+    //   price: this.props.price, 
+    //   amount : this.state.amount ,
+    //   img: this.props.img
+    //  } 
+    //  updateAmount(cartItem , this.props.id )
+    // .then((response) => {
+   
+    //   console.log("update item ")
+      
+      
   
-    })
-    .catch((error) => {
-      console.log('API ERROR:', error);
-    });
+    // })
+    // .catch((error) => {
+    //   console.log('API ERROR:', error);
+    // });
     
   }
   
+  saveChange = (event) => {
+    event.preventDefault();
+  let cartItem ={
+    itemId : this.props.id ,
+    totalprice: this.state.totalprice ,
+     name: this.props.name,
+    price: this.props.price, 
+    amount : this.state.amount ,
+    img: this.props.img
+   } 
+   updateAmount(cartItem , this.props.id )
+  .then((response) => {
+ 
+    console.log("update item ")
+    //  let newArray = this.props.carts.map(( item , index)=>{
+    //    return   item 
 
+      
+    // })
+
+    // this.props.setCarts(newArray)
+    // this.props.componentDidMount()
+      this.props.sumAllTotal()
+  })
+  .catch((error) => {
+    console.log('API ERROR:', error);
+  });
+  }
   render(){
 
   return(
@@ -95,7 +124,7 @@ export default class Cart extends React.Component{
   <p>amount:{this.state.amount} </p>
      <button onClick={this.incresAmount}> + </button>
      <a href="#" onClick={this.deleteItem}>Delete</a>
-       
+     <a href="#" onClick={this.saveChange}>save change </a> 
 </div>
   )
 }

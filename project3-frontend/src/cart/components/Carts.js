@@ -32,7 +32,7 @@ export default class Carts extends React.Component{
      }
 
      deleteOne = (id) => {
-      this.componentDidMount()
+      
       
         console.log('The item ID to Delete', id);
         deleteItemByID(id)
@@ -50,6 +50,19 @@ export default class Carts extends React.Component{
 
       }
 
+  sumAllTotal = () => {
+    let totalAllProduct = 0 ;
+    if (this.props.carts.length > 0){
+      let newArray = this.props.carts.filter((element) => {
+                console.log(element.totalprice)
+               return totalAllProduct += element.totalprice
+      })
+        return newArray
+   }
+
+
+  }
+
 
 render(){
        
@@ -66,19 +79,29 @@ render(){
         itemId={item.itemId}
         id={item._id}
         key={index}
+        setCarts={this.props.setCarts}
+        carts = {this.props.carts}
+        sumAllTotal={this.sumAllTotal}
+       
         />
     })
 
      }
 
-  
+      
+     let total=this.sumAllTotal;
+
+
+    
      
+
     
   return( <div>
 <h3> All Carts </h3>
 <a href="#" onClick={this.deleteAllCart}>Delete All</a>
 {allCarts}
-
+<h4> the total </h4>
+{total}
 </div>
   )
 }
