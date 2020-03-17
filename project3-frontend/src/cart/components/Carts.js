@@ -58,7 +58,7 @@ export default class Carts extends React.Component{
     let totalAllProduct = 0 ;
     if (this.props.carts.length > 0){
       let newArray = this.props.carts.filter((element) => {
-                console.log(element.totalprice)
+               
                return totalAllProduct += element.totalprice
       })
       return totalAllProduct
