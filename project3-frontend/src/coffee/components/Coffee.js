@@ -38,7 +38,7 @@ export default class Coffee extends React.Component{
      <p> {this.props.description} </p>
        <p> {this.props.type} </p>
        <p> {this.props.price} </p>
-       <img src={this.props.img }  height="42" width="42"></img>
+       <img src={this.props.img }  height="300px" width="300px"></img>
        <a href ="#" onClick={this.addToCartCoffee}>ADD TO CART</a>
 </div>
   )

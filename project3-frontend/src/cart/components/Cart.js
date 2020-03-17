@@ -107,7 +107,7 @@ export default class Cart extends React.Component {
         <p> {this.props.img} </p>
         <h2>Name: {this.props.name}</h2>
     <p>price: {this.props.price}</p>
-        <img src={this.props.img }  height="42" width="42"></img>
+        <img src={this.props.img }  height="300" width="300"></img>
         <p>total price: {this.state.totalprice} </p>
         <button onClick={this.decreseAmount}> - </button>
         <p>amount:{this.state.amount} </p>
