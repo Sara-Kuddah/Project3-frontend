@@ -92,8 +92,8 @@ export default class Home extends React.Component{
   carts={this.state.carts}
   />
 
-<Carts  carts={this.state.carts} 
-  setCarts={this.setCarts}/>
+{/* <Carts  carts={this.state.carts} 
+  setCarts={this.setCarts}/> */}
   </div>
 
   )
