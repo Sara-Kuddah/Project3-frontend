@@ -6,7 +6,8 @@ import axios from 'axios';
 
 // get all Articles 
 export const getAllcart = () => {
-         
+
+
     return   axios.get(`${apiUrl}/cart`)
   
 };
