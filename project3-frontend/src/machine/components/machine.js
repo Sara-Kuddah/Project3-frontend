@@ -40,7 +40,7 @@ export default class Machine extends React.Component{
      <p> {this.props.description} </p>
        <p> {this.props.type} </p>
        <p> {this.props.price} </p>
-       <img src={this.props.img }  height="42" width="42"></img>
+       <img src={this.props.img }  height="300" width="300"></img>
        <a href ="#" onClick={this.addToCartMachine}>ADD TO CART</a>
 </div>
   )
