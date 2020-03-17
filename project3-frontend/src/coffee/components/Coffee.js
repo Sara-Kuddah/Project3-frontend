@@ -9,20 +9,20 @@ export default class Coffee extends React.Component{
 
     let cartItem ={
       itemId : this.props.id ,
-      totalprice:55 ,
+      totalprice: this.props.price ,
        name: this.props.name,
       price: this.props.price, 
-      amount : 9 ,
+      amount : 1 ,
      img: this.props.img
      } 
     
 
     addToCart(cartItem) 
-    .then ((response)=>{
+    .then ((res)=>{
         console.log("Item has been Added");
         const  newCartList = this.props.carts;
-        newCartList.push(cartItem);
-        console.log(newCartList)
+        newCartList.push(res.data.cart);
+        console.log(res.data.cart)
         this.props.setCarts(newCartList)
         
 

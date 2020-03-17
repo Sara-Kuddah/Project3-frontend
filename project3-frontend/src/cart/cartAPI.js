@@ -45,7 +45,7 @@ export const updateAmount= (cartItem , id ) =>{
         {
             "cart":{
              "itemId" : cartItem.itemId ,
-             "totalprice" :cartItem.totalprice ,
+             "totalprice" : cartItem.totalprice ,
               "name": cartItem.name,
              "price": cartItem.price, 
              "amount" : cartItem.amount ,
