@@ -1,46 +1,40 @@
-import React from 'react';//import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-// import Coffees from './coffee/components/Coffees'
-// import Machines from './machine/components/machines'
-// import Tools from './tool/components/tools'
-import Home from './Home'
+import Coffees from './coffee/components/Coffees'
+import Machines from './machine/components/machines'
+import Tools from './tool/components/tools'
 import Carts from './cart/components/Carts'
 import apiURL from './apiConfig';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom';
 
 
-export default class App extends React.Component{
+export default class Home extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      //  coffees : [],
-      //  machines:[],
-      //  tools:[],
+       coffees : [],
+       machines:[],
+       tools:[],
        carts:[],
     }
 
     console.log(' MY API URL ', apiURL)
   }
 
-  // setCoffees = (coffees) => {
-  //   this.setState({
-  //     coffees : coffees
-  //   })
-  // }
-  // setMachines = (machines) => {
-  //   this.setState({
-  //     machines:machines
-  //   })
-  // }
-  // setTools = (tools) => {
-  //   this.setState({
-  //     tools : tools
-  //   })
-  // }
+  setCoffees = (coffees) => {
+    this.setState({
+      coffees : coffees
+    })
+  }
+  setMachines = (machines) => {
+    this.setState({
+      machines:machines
+    })
+  }
+  setTools = (tools) => {
+    this.setState({
+      tools : tools
+    })
+  }
   setCarts = (carts) => {
     this.setState({
       carts : carts
@@ -79,17 +73,8 @@ export default class App extends React.Component{
       </ul>
     </nav>
 
-    <Router>
-        <Link to="/">Go to Home Page</Link>{' '}
-        <Link to="/Carts">Carts</Link>{' '}
-        <Link to="/contact">Contact Us!</Link>
-      <div>
-        <Route exact path="/" component={Home} />
-        <Route path="/api/cart" component={Carts} />
-        {/* <Route path="/contact" component={Contact} /> */}
-      </div>
-    </Router>
-  {/* <Coffees  coffees={this.state.coffees} 
+    
+  <Coffees  coffees={this.state.coffees} 
   setCoffees={this.setCoffees}
   setCarts={this.setCarts}
   carts={this.state.carts}
@@ -105,11 +90,11 @@ export default class App extends React.Component{
   setTools={this.setTools} 
   setCarts={this.setCarts}
   carts={this.state.carts}
-  /> */}
+  />
 
-{/* <Carts  carts={this.state.carts} 
+<Carts  carts={this.state.carts} 
   setCarts={this.setCarts}/>
-  </div> */}
+  </div>
 
   )
 }
