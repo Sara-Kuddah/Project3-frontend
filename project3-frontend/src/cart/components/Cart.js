@@ -103,8 +103,28 @@ export default class Cart extends React.Component {
   };
   render() {
     return (
-      <div className="cart">
-        <p> {this.props.img} </p>
+      <div className="coffee">
+
+<div className="card text-center"  style={{width:18+'em'}}>
+<img className="card-img-top" src={this.props.img } alt="Card image cap"  height="42" width="42" />
+  <div class="card-body">
+    <h5 classnName="card-title">{this.props.name}</h5>
+    <p className="card-text">price: {this.props.price}</p>
+    <p className="card-text"> total price: {this.state.totalprice}</p>
+    <button onClick={this.decreseAmount}> - </button>
+        <span>{this.state.amount} </span>
+        <button onClick={this.incresAmount}> + </button><br/>
+        <a href="#" className="btn btn-primary" onClick={this.deleteItem}>
+          Delete
+        </a>
+        <a href="#" className="btn btn-primary"  onClick={this.saveChange}>
+          save change{" "}
+        </a>
+  </div>
+  </div>
+
+        
+        {/* <p> {this.props.img} </p>
         <h2>Name: {this.props.name}</h2>
     <p>price: {this.props.price}</p>
         <img src={this.props.img }  height="42" width="42"></img>
@@ -117,7 +137,7 @@ export default class Cart extends React.Component {
         </a>
         <a href="#" onClick={this.saveChange}>
           save change{" "}
-        </a>
+        </a> */}
       </div>
     );
   }
