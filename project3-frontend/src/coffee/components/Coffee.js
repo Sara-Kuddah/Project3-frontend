@@ -16,7 +16,26 @@ export default class Coffee extends React.Component{
       amount : 1 ,
      img: this.props.img
      } 
-    
+
+  
+     let state=this.props.carts.map((item)=>{
+       if(item.name ===this.props.name ){
+       return item.name
+  
+     }else{
+       console.log("not exist")
+       return false
+     }
+     })
+
+    // if(state){
+    //   console.log(state);
+    //   console.log("not exist you can add the item");
+
+    // }else{
+    //   console.log(state);
+    //   console.log("you can not add it ");
+    // }
 
     addToCart(cartItem) 
     .then ((res)=>{
