@@ -17,40 +17,43 @@ export default class Coffee extends React.Component{
      img: this.props.img
      } 
 
+     let ItemExist=false;
+
+     this.props.carts.forEach((item)=>{
+       if(item.name === this.props.name ){
+         console.log("ItemExist");
+        ItemExist= true;
   
-     let state=this.props.carts.map((item)=>{
-       if(item.name ===this.props.name ){
-       return item.name
-  
-     }else{
-       console.log("not exist")
-       return false
      }
-     })
+    
+     });
 
-    // if(state){
-    //   console.log(state);
-    //   console.log("not exist you can add the item");
 
-    // }else{
-    //   console.log(state);
-    //   console.log("you can not add it ");
-    // }
+    if(ItemExist){
+      console.log(ItemExist);
+      console.log("ItemExist");
+      alert("You can not add this item , it is already exist in thr Cart")
 
-    addToCart(cartItem) 
-    .then ((res)=>{
-        console.log("Item has been Added");
-        const  newCartList = this.props.carts;
-        newCartList.push(res.data.cart);
-        console.log(res.data.cart)
-        this.props.setCarts(newCartList)
-        
+    }else{
+      console.log(ItemExist);
+      console.log("ItemNotExist");
+      addToCart(cartItem) 
+      .then ((res)=>{
+          console.log("Item has been Added");
+          const  newCartList = this.props.carts;
+          newCartList.push(res.data.cart);
+          console.log(res.data.cart)
+          this.props.setCarts(newCartList)
+          
+  
+      })
+      .catch((error) =>{
+          console.log('API error' , error)
+      })
+    }
+    }
 
-    })
-    .catch((error) =>{
-        console.log('API error' , error)
-    })
-  }
+ 
   render(){
 
   return(<Card style={{ width: '18rem' }}>
