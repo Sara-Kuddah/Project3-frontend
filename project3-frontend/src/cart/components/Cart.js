@@ -106,13 +106,15 @@ export default class Cart extends React.Component {
   };
   render() {
     return (
+
   <div className="cart">
-        <ListGroup horizontal>
+        <ListGroup horizontal >
+  <ListGroup.Item ><img src={this.props.img} alt="Coffee" style={{height: 100+'px'}} width="100"/></ListGroup.Item>
   <ListGroup.Item >{this.props.name}</ListGroup.Item>
   <ListGroup.Item>{this.props.price} </ListGroup.Item>
-  <ListGroup.Item><button onClick={this.decreseAmount}> - </button></ListGroup.Item>
-  <ListGroup.Item>{this.state.amount} </ListGroup.Item>
-  <ListGroup.Item><button onClick={this.incresAmount}> + </button></ListGroup.Item>
+  <ListGroup.Item><button onClick={this.decreseAmount} style={{margin: 8+'px'}}> - </button>
+  {this.state.amount}
+  <button onClick={this.incresAmount} style={{margin: 8+'px'}} > + </button> </ListGroup.Item>
   <ListGroup.Item>{this.state.totalprice} </ListGroup.Item>
   <ListGroup.Item> <a href="#" onClick={this.saveChange}><i class="material-icons">
 save_alt
@@ -122,6 +124,7 @@ delete_forever
 </i></Button> </ListGroup.Item>
 </ListGroup>
 </div>
+
     );
   }
 }

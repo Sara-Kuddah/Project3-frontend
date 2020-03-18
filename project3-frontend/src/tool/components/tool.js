@@ -36,6 +36,7 @@ export default class Tool extends React.Component{
 
   render(){
 
+
   return(<Card style={{ width: '18rem' }}>
   <Card.Img variant="top" src={this.props.img} />
   <Card.Body>
@@ -50,6 +51,7 @@ export default class Tool extends React.Component{
     <Button variant="primary" onClick={this.addToCartTool}>ADD TO CART</Button>
 
 </Card>
+
 
   )
 }
