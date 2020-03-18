@@ -6,8 +6,10 @@ import Container from 'react-bootstrap/Container';
 
 export default class Coffees extends React.Component{
     componentDidMount(){
+        // call axios API to get all machine 
         getAllcoffee() 
         .then ((response)=>{
+            // send the response to machine array 
             this.props.setCoffees(response.data.coffee)
         })
         .catch((error) =>{
@@ -16,6 +18,7 @@ export default class Coffees extends React.Component{
     }
 render(){
     let allCoffees = <h4> No coffee item </h4>
+     // check if tool array have item to create machine 
      if(this.props.coffees.length > 0){
         allCoffees = this.props.coffees.map((item , index ) => {
         return <Coffee name={item.name} 

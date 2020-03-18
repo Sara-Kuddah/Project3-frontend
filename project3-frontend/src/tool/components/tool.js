@@ -4,10 +4,9 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
 export default class Tool extends React.Component{
-  
+    // call back cart API to add item to cart array
   addToCartTool = (event)=>{
     event.preventDefault();
-
     let cartItem ={
       itemId : this.props.id ,
       totalprice: this.props.price ,

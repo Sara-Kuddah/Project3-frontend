@@ -13,12 +13,12 @@ export default class Cart extends React.Component {
       totalprice: this.props.totalprice
     };
   }
-
+   // delete one item from cart
   deleteItem = event => {
     event.preventDefault();
     this.props.deleteOne(this.props.id);
   };
-
+// decrese amount of the item 
   decreseAmount = () => {
     if (this.state.amount > 0) {
       let newamount = this.state.amount;
@@ -29,26 +29,10 @@ export default class Cart extends React.Component {
         amount: newamount,
         totalprice: newTotalprice
       });
-      // console.log("dec",this.state.amount)
-      // let cartItem ={
-      //   itemId : this.props.id ,
-      //   totalprice: this.state.totalprice ,
-      //    name: this.props.name,
-      //   price: this.props.price ,
-      //   amount : this.state.amount ,
-      //   img: this.props.img
-      //  }
-
-      // updateAmount(cartItem , this.props.id )
-      // .then((response) => {
-
-      // })
-      // .catch((error) => {
-      //   console.log('API ERROR:', error);
-      // });
     }
   };
 
+//  incres amount of the item 
   incresAmount = () => {
     let newamount = this.state.amount;
     let newTotalprice = this.state.totalprice;
@@ -59,26 +43,12 @@ export default class Cart extends React.Component {
       amount: newamount,
       totalprice: newTotalprice
     });
-    console.log("Inc", this.state.amount);
-    // let cartItem ={
-    //   itemId : this.props.id ,
-    //   totalprice: this.state.totalprice ,
-    //    name: this.props.name,
-    //   price: this.props.price,
-    //   amount : this.state.amount ,
-    //   img: this.props.img
-    //  }
-    //  updateAmount(cartItem , this.props.id )
-    // .then((response) => {
 
-    //   console.log("update item ")
-
-    // })
-    // .catch((error) => {
-    //   console.log('API ERROR:', error);
-    // });
+    
+  
   };
 
+  // to save the changed amount 
   saveChange = event => {
     event.preventDefault();
     let cartItem = {
@@ -91,14 +61,6 @@ export default class Cart extends React.Component {
     };
     updateAmount(cartItem, this.props.id)
       .then(response => {
-        console.log("update item ");
-        //  let newArray = this.props.carts.map(( item , index)=>{
-        //    return   item
-
-        // })
-
-        // this.props.setCarts(newArray)
-        // this.props.componentDidMount()
         this.props.sumAllTotal();
       })
       .catch(error => {

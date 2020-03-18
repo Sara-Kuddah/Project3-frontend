@@ -11,9 +11,10 @@ import CardDeck from 'react-bootstrap/CardDeck'
 export default class Machines extends React.Component{
    
     componentDidMount(){
-     
+      // call axios API to get all machine 
         getAllmachine() 
         .then ((response)=>{
+             // send the response to machine array 
             this.props.setMachines(response.data.machine)
 
         })
@@ -29,7 +30,7 @@ export default class Machines extends React.Component{
 render(){
        
     let allmachine = <h4> No machine item </h4>
-
+ // check if tool array have item to create machine 
      if(this.props.machines.length > 0){
         allmachine = this.props.machines.map((item , index ) => {
         return <Machine name={item.name} 

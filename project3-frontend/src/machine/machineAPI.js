@@ -2,9 +2,9 @@ import apiUrl from '../apiConfig';
 import axios from 'axios';
 
 
-// Index , show , create ,update  , destroy
+// Index 
 
-// get all Articles 
+// get all mashines 
 export const getAllmachine = () => {
            console.log(" inside axios")
     return   axios.get(`${apiUrl}/machine`)

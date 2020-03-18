@@ -2,9 +2,9 @@ import apiUrl from '../apiConfig';
 import axios from 'axios';
 
 
-// Index , show , create ,update  , destroy
+// Index 
 
-// get all Articles 
+// get all tools 
 export const getAlltool = () => {
            console.log(" inside axios")
     return   axios.get(`${apiUrl}/tool`)
