@@ -2,6 +2,7 @@
 import React from "react";
 import { updateAmount } from "../cartAPI";
 import ListGroup from 'react-bootstrap/ListGroup'
+import Button from 'react-bootstrap/Button'
 
 
 export default class Cart extends React.Component {
@@ -108,14 +109,19 @@ export default class Cart extends React.Component {
     return (
 
   <div className="cart">
-        <ListGroup horizontal>
+        <ListGroup horizontal >
   <ListGroup.Item >{this.props.name}</ListGroup.Item>
   <ListGroup.Item>{this.props.price} </ListGroup.Item>
   <ListGroup.Item><button onClick={this.decreseAmount}> - </button></ListGroup.Item>
-  <ListGroup.Item>{this.state.amount} </ListGroup.Item>
-  <ListGroup.Item><button onClick={this.incresAmount}> + </button></ListGroup.Item>
+  <ListGroup.Item>{this.state.amount}</ListGroup.Item>
+  <ListGroup.Item><button onClick={this.incresAmount}> + </button> </ListGroup.Item>
   <ListGroup.Item>{this.state.totalprice} </ListGroup.Item>
-  <ListGroup.Item> <a href="#" onClick={this.saveChange}>save change</a></ListGroup.Item>
+  <ListGroup.Item> <a href="#" onClick={this.saveChange}><i class="material-icons">
+save_alt
+</i></a></ListGroup.Item>
+  <ListGroup.Item><Button variant="danger"  onClick={this.deleteItem}><i class="material-icons">
+delete_forever
+</i></Button> </ListGroup.Item>
 </ListGroup>
 </div>
 

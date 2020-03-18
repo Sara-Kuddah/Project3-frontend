@@ -40,14 +40,16 @@ img{
   border:5px solid red;
 }
 .cart{
-  border: 3px solid gray;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
 .list-group-item{
- 
-  width: 157px;
+  width: 142px;
+  
+}
+.container{
   
 }
