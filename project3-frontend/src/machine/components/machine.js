@@ -1,5 +1,15 @@
 import React from 'react';
 import {addToCart} from '../../cart/cartAPI';
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+
+
+
+
+
 
 
 export default class Machine extends React.Component{
@@ -34,15 +44,25 @@ export default class Machine extends React.Component{
 
   render(){
 
-  return(
-<div className="coffee">
-     <h2> {this.props.name}</h2>
-     <p> {this.props.description} </p>
-       <p> {this.props.type} </p>
-       <p> {this.props.price} </p>
-       <img src={this.props.img }  height="300" width="300"></img>
-       <a href ="#" onClick={this.addToCartMachine}>ADD TO CART</a>
-</div>
+
+  return( 
+
+    
+       <Card style={{ width: '10rem' }}>
+  <Card.Img variant="top" src={this.props.img} />
+  <Card.Body>
+    <Card.Title>{this.props.name}</Card.Title>
+    <Card.Text>
+    {this.props.description} 
+    </Card.Text>
+    <Card.Text>
+    {this.props.price} RAL
+    </Card.Text>
+    </Card.Body>
+    <Button variant="primary" onClick={this.addToCartMachine}>ADD TO CART</Button>
+  
+</Card>
+
   )
 }
 

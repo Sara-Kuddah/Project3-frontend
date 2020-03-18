@@ -1,5 +1,7 @@
 import React from "react";
 import { updateAmount } from "../cartAPI";
+import ListGroup from 'react-bootstrap/ListGroup'
+
 
 export default class Cart extends React.Component {
   constructor(props) {
@@ -103,22 +105,19 @@ export default class Cart extends React.Component {
   };
   render() {
     return (
-      <div className="cart">
-        <p> {this.props.img} </p>
-        <h2>Name: {this.props.name}</h2>
-    <p>price: {this.props.price}</p>
-        <img src={this.props.img }  height="300" width="300"></img>
-        <p>total price: {this.state.totalprice} </p>
-        <button onClick={this.decreseAmount}> - </button>
-        <p>amount:{this.state.amount} </p>
-        <button onClick={this.incresAmount}> + </button>
-        <a href="#" onClick={this.deleteItem}>
-          Delete
-        </a>
-        <a href="#" onClick={this.saveChange}>
-          save change{" "}
-        </a>
-      </div>
+
+  <div className="cart">
+        <ListGroup horizontal>
+  <ListGroup.Item >{this.props.name}</ListGroup.Item>
+  <ListGroup.Item>{this.props.price} </ListGroup.Item>
+  <ListGroup.Item><button onClick={this.decreseAmount}> - </button></ListGroup.Item>
+  <ListGroup.Item>{this.state.amount} </ListGroup.Item>
+  <ListGroup.Item><button onClick={this.incresAmount}> + </button></ListGroup.Item>
+  <ListGroup.Item>{this.state.totalprice} </ListGroup.Item>
+  <ListGroup.Item> <a href="#" onClick={this.saveChange}>save change</a></ListGroup.Item>
+</ListGroup>
+</div>
+
     );
   }
 }

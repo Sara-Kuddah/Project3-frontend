@@ -1,6 +1,10 @@
 import React from 'react';
 import Machine from './machine'
 import { getAllmachine} from '../machineAPI'; 
+import Container from 'react-bootstrap/Container';
+import CardDeck from 'react-bootstrap/CardDeck'
+
+
 
 
 
@@ -46,8 +50,12 @@ render(){
      
     
   return( <div>
-<h3> All machine </h3>
+<h3> All Machine </h3>
+<Container>
+<CardDeck>
 {allmachine}
+</CardDeck>
+</Container>
 
 </div>
   )
