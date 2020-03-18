@@ -16,20 +16,41 @@ export default class Tool extends React.Component{
      img: this.props.img
      } 
     
+     let ItemExist=false;
 
-    addToCart(cartItem) 
-    .then ((res)=>{
-        const  newCartList = this.props.carts;
-        newCartList.push(res.data.cart);
-        console.log(res.data.cart)
-        this.props.setCarts(newCartList)
-      
-    })
-    .catch((error) =>{
-        console.log('API error' , error)
-    })
-  }
+     this.props.carts.forEach((item)=>{
+       if(item.name === this.props.name ){
+         console.log("ItemExist");
+        ItemExist= true;
+  
+     }
+    
+     });
 
+     
+    if(ItemExist){
+      console.log(ItemExist);
+      console.log("ItemExist");
+      alert("You can not add this item , it is already exist in thr Cart")
+
+    }else{
+      console.log(ItemExist);
+      console.log("ItemNotExist");
+      addToCart(cartItem) 
+      .then ((res)=>{
+          console.log("Item has been Added");
+          const  newCartList = this.props.carts;
+          newCartList.push(res.data.cart);
+          console.log(res.data.cart)
+          this.props.setCarts(newCartList)
+          
+  
+      })
+      .catch((error) =>{
+          console.log('API error' , error)
+      })
+    }
+    }
   render(){
 
 
