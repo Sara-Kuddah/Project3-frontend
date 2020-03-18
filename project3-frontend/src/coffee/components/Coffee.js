@@ -1,7 +1,7 @@
 import React from 'react';
 import {addToCart} from '../../cart/cartAPI';
-// import '../../App.css';
-
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 export default class Coffee extends React.Component{
 
 
@@ -33,27 +33,22 @@ export default class Coffee extends React.Component{
     })
   }
   render(){
-  return(
- <div className="coffee"> 
 
-<div className="card text-center"  style={{width:18+'em'}}>
-<img className="card-img-top" src={this.props.img } alt="Card image cap"/>
-  <div class="card-body">
-    <h5 classnName="card-title">{this.props.name}</h5>
-    <p className="card-text">{this.props.description}</p>
-    <p className="card-text"> {this.props.price} </p>
-    <a href="#" className="btn btn-primary" onClick={this.addToCartCoffee} >ADD TO CART</a>
-  </div>
-  </div>
+  return(<Card style={{ width: '18rem' }}>
+  <Card.Img variant="top" src={this.props.img} />
+  <Card.Body>
+    <Card.Title>{this.props.name}</Card.Title>
+    <Card.Text>
+    {this.props.description} 
+    </Card.Text>
+    <Card.Text>
+    {this.props.price} RAL
+    </Card.Text>
+    </Card.Body>
+    <Button variant="primary" onClick={this.addToCartCoffee}>ADD TO CART</Button>
 
-     {/* <h5> {this.props.name}</h5>
-     <p> {this.props.description} </p>
-       <p> {this.props.type} </p>
-       <p> {this.props.price} </p>
-       <img src={this.props.img }  height="42" width="42"></img>
-       <a href ="#" onClick={this.addToCartCoffee}>ADD TO CART</a> */}
+</Card>
 
-</div>
   )
 }
 }
