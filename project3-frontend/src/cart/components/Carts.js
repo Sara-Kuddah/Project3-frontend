@@ -1,6 +1,6 @@
 import React from 'react';
 import Cart from './Cart'
-import {getAllcart, deleteAll, deleteItemByID} from '../cartAPI'; 
+import {getAllcart, deleteAll, deleteItemByID } from '../cartAPI'; 
 import Container from 'react-bootstrap/Container';
 import ListGroup from 'react-bootstrap/ListGroup'
 import '../../App.css'

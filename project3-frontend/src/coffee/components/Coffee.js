@@ -17,7 +17,7 @@ export default class Coffee extends React.Component{
      img: this.props.img
      } 
     
-     
+
     addToCart(cartItem) 
     .then ((res)=>{
         console.log("Item has been Added");
