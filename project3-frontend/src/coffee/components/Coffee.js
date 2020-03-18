@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 export default class Coffee extends React.Component{
 
-
+ // call back cart API to add item to cart array
    addToCartCoffee = (event)=>{
     event.preventDefault();
 

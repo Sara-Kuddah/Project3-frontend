@@ -7,14 +7,18 @@ import ListGroup from 'react-bootstrap/ListGroup'
 
 export default class Carts extends React.Component{
     componentDidMount(){
+      // call axios API to get all items in cart 
         getAllcart() 
         .then ((response)=>{
+          // send the response to cart array 
             this.props.setCarts(response.data.cart)
         })
         .catch((error) =>{
             console.log('API error' , error)
         })
     }
+
+    // delete all items in cart
     deleteAllCart =(event)=>{
         event.preventDefault();
         deleteAll()
@@ -25,8 +29,9 @@ export default class Carts extends React.Component{
             console.log('API error' , error)
         })
      }
+
+     // delete one item from the cart
      deleteOne = (id) => {
-      //this.componentDidMount()
         console.log('The item ID to Delete', id);
         deleteItemByID(id)
           .then((response) => {
@@ -40,6 +45,8 @@ export default class Carts extends React.Component{
             console.log('API ERROR:', error);
           });
       }
+
+      // calculite all items price that on the cart
   sumAllTotal = () => {
     this.componentDidMount()
     let totalAllProduct = 0 ;
@@ -51,7 +58,9 @@ export default class Carts extends React.Component{
    }
   }
 render(){
+
     let allCarts = <h4> No Carts item </h4>
+    // check if cart array have item to create item in cart 
      if(this.props.carts.length > 0){
         allCarts = this.props.carts.map((item , index ) => {
         return <Cart name={item.name} 
