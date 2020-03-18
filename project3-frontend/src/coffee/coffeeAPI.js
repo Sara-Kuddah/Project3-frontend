@@ -2,9 +2,9 @@ import apiUrl from '../apiConfig';
 import axios from 'axios';
 import {} from '../cart/cartAPI'
 
-// Index , show , create ,update  , destroy
+// Index 
 
-// get all Articles 
+// get all coffee 
 export const getAllcoffee = () => {
            console.log(" inside axios")
     return   axios.get(`${apiUrl}/coffee`)

@@ -3,9 +3,7 @@ import './App.css';
 import Coffees from './coffee/components/Coffees'
 import Machines from './machine/components/machines'
 import Tools from './tool/components/tools'
-import Carts from './cart/components/Carts'
 import apiURL from './apiConfig';
-
 
 
 export default class Home extends React.Component{
@@ -20,22 +18,25 @@ export default class Home extends React.Component{
 
     console.log(' MY API URL ', apiURL)
   }
-
+// to enable to change coffee array 
   setCoffees = (coffees) => {
     this.setState({
       coffees : coffees
     })
   }
+  // to enable to machine cart array 
   setMachines = (machines) => {
     this.setState({
       machines:machines
     })
   }
+  // to enable to change tool array 
   setTools = (tools) => {
     this.setState({
       tools : tools
     })
   }
+  // to enable to change cart array 
   setCarts = (carts) => {
     this.setState({
       carts : carts
@@ -44,9 +45,7 @@ export default class Home extends React.Component{
   render(){
   return(
 <div className="App">
- 
-
-    
+  
   <Coffees  coffees={this.state.coffees} 
   setCoffees={this.setCoffees}
   setCarts={this.setCarts}
@@ -64,9 +63,6 @@ export default class Home extends React.Component{
   setCarts={this.setCarts}
   carts={this.state.carts}
   />
-
-{/* <Carts  carts={this.state.carts} 
-  setCarts={this.setCarts}/> */}
   </div>
 
   )

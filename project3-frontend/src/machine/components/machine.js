@@ -2,18 +2,9 @@ import React from 'react';
 import {addToCart} from '../../cart/cartAPI';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-
-
-
-
-
-
 
 export default class Machine extends React.Component{
-  
+  // call back cart API to add item to cart array
   addToCartMachine = (event)=>{
     event.preventDefault();
 
