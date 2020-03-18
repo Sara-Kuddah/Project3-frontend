@@ -35,10 +35,19 @@
     transform: rotate(360deg);
   }
 }
-.coffee{
+img{
+  height: 450px;
+  border:5px solid red;
+}
+.cart{
+  border: 3px solid gray;
   display: flex;
-  flex-direction: row;
-  text-align: center;
-  justify-content:center;
-  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.list-group-item{
+ 
+  width: 157px;
+  
 }
