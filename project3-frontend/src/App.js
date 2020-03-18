@@ -3,6 +3,7 @@ import './App.css';
 // import Coffees from './coffee/components/Coffees'
 // import Machines from './machine/components/machines'
 // import Tools from './tool/components/tools'
+
 import Home from './Home'
 import Carts from './cart/components/Carts'
 import apiURL from './apiConfig';
@@ -54,8 +55,26 @@ export default class App extends React.Component{
    
 
     <Router>
-        <Link to="/">Go to Home Page</Link>{' '}
-        <Link to="/Carts">Carts</Link>{' '}
+    <div className="jumbotron" style={{marginBottom: 0+'em'}}>
+    <h1>Coffee Store</h1>
+    <p>When you can find every thing you need</p>
+  </div>
+    <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+      <span class="navbar-text">Coffee Store</span>
+      <ul className="navbar-nav">
+        <li className="nav-item dropdown">
+        
+        </li>
+        <li className="nav-item">
+          <a className="nav-link"> <Link to="/">Go to Home Page</Link></a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link"><Link to="/Carts">Carts</Link></a>
+        </li>
+      </ul>
+    </nav>
+       
+      
         {/* <Link to="/contact">Contact Us!</Link> */}
       <div>
         <Switch>

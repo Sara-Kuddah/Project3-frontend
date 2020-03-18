@@ -1,6 +1,8 @@
 import React from 'react';
 import Coffee from './Coffee'
 import {getAllcoffee} from '../coffeeAPI'; 
+import CardDeck from 'react-bootstrap/CardDeck'
+import Container from 'react-bootstrap/Container';
 
 export default class Coffees extends React.Component{
     componentDidMount(){
@@ -30,8 +32,12 @@ render(){
      }
 
   return( <div>
-<h3> All coffees </h3>
+<h3> All Coffees </h3>
+<Container>
+<CardDeck>
 {allCoffees}
+</CardDeck>
+</Container>
 </div>
   )
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import {addToCart} from '../../cart/cartAPI';
-
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
 export default class Tool extends React.Component{
   
@@ -35,15 +36,21 @@ export default class Tool extends React.Component{
 
   render(){
 
-  return(
-<div className="coffee">
-     <h2> {this.props.name}</h2>
-     <p> {this.props.description} </p>
-       <p> {this.props.type} </p>
-       <p> {this.props.price} </p>
-       <p> {this.props.img} </p>
-       <a href ="#" onClick={this.addToCartTool}>ADD TO CART</a>
-</div>
+  return(<Card style={{ width: '18rem' }}>
+  <Card.Img variant="top" src={this.props.img} />
+  <Card.Body>
+    <Card.Title>{this.props.name}</Card.Title>
+    <Card.Text>
+    {this.props.description} 
+    </Card.Text>
+    <Card.Text>
+    {this.props.price} RAL
+    </Card.Text>
+    </Card.Body>
+    <Button variant="primary" onClick={this.addToCartTool}>ADD TO CART</Button>
+
+</Card>
+
   )
 }
 

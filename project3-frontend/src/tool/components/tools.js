@@ -1,7 +1,8 @@
 import React from 'react';
 import Tool from './tool'
 import {getAlltool} from '../tollAPI'; 
-
+import CardDeck from 'react-bootstrap/CardDeck'
+import Container from 'react-bootstrap/Container'
 
 
 export default class Coffees extends React.Component{
@@ -46,9 +47,12 @@ render(){
      
     
   return( <div>
-<h3> All tools </h3>
+<h3> All Tools </h3>
+<Container>
+<CardDeck>
 {allTools}
-
+</CardDeck>
+</Container>
 </div>
   )
 }

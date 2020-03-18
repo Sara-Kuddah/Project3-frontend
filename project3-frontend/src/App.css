@@ -35,4 +35,19 @@
     transform: rotate(360deg);
   }
 }
-
+img{
+  height: 450px;
+  border:5px solid red;
+}
+.cart{
+  border: 3px solid gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.list-group-item{
+ 
+  width: 157px;
+  
+}

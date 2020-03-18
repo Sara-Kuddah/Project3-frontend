@@ -1,7 +1,7 @@
 import React from 'react';
 import Cart from './Cart'
 import {getAllcart, deleteAll, deleteItemByID} from '../cartAPI'; 
-
+import Container from 'react-bootstrap/Container';
 
 
 export default class Carts extends React.Component{
@@ -101,8 +101,11 @@ render(){
   return( <div>
 <h3> All Carts </h3>
 <a href="#" onClick={this.deleteAllCart}>Delete All</a>
+<Container>
+  
 {allCarts}
-<h4> the total </h4>
+</Container>  
+<h4> The Total </h4>
 {this.sumAllTotal()}
 </div>
   )
