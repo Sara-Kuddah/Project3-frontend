@@ -3,7 +3,8 @@ import Cart from './Cart'
 import {getAllcart, deleteAll, deleteItemByID } from '../cartAPI'; 
 import Container from 'react-bootstrap/Container';
 import ListGroup from 'react-bootstrap/ListGroup'
-import '../../App.css'
+
+
 export default class Carts extends React.Component{
     componentDidMount(){
         getAllcart() 
@@ -72,16 +73,20 @@ render(){
   return( <div>
 <h3> All Carts </h3>
 <a href="#" onClick={this.deleteAllCart}>Delete All</a>
+
 <Container>
-<ListGroup horizontal >
-<ListGroup.Item >icone</ListGroup.Item>
+<div className="cart">
+<ListGroup horizontal>
   <ListGroup.Item >Name</ListGroup.Item>
   <ListGroup.Item> Price</ListGroup.Item>
-  
+  <ListGroup.Item> Subs </ListGroup.Item>
   <ListGroup.Item>Amount</ListGroup.Item>
- 
+  <ListGroup.Item>Add</ListGroup.Item>
   <ListGroup.Item>Total price </ListGroup.Item>
+  <ListGroup.Item >Save changes</ListGroup.Item>
+  <ListGroup.Item >Delete</ListGroup.Item>
 </ListGroup>
+</div>
 {allCarts}
 </Container>  
 <h4> The Total </h4>
