@@ -105,6 +105,7 @@ export default class Cart extends React.Component {
   };
   render() {
     return (
+
   <div className="cart">
         <ListGroup horizontal>
   <ListGroup.Item >{this.props.name}</ListGroup.Item>
@@ -116,6 +117,7 @@ export default class Cart extends React.Component {
   <ListGroup.Item> <a href="#" onClick={this.saveChange}>save change</a></ListGroup.Item>
 </ListGroup>
 </div>
+
     );
   }
 }

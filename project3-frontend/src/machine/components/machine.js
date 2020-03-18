@@ -44,6 +44,7 @@ export default class Machine extends React.Component{
 
   render(){
 
+
   return( 
 
     
@@ -61,11 +62,6 @@ export default class Machine extends React.Component{
     <Button variant="primary" onClick={this.addToCartMachine}>ADD TO CART</Button>
   
 </Card>
-
-
-
-
-
 
   )
 }
